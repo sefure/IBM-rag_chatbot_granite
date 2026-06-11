@@ -25,30 +25,27 @@ pip install langchain-huggingface transformers sentence-transformers langchain-c
 
 
 Türkçe
-📝 Proje Özeti
+
+### **📝 Proje Özeti**
+
 Bu depo, LangChain ve Google Colab kullanılarak geliştirilmiş Geri Alma Destekli Üretim (RAG) tabanlı bir chatbot uygulamasını içermektedir. Proje, bütçeleme ve finansal ipucu dökümanlarını vektör embedding'lerine (sayısal dizilere) dönüştürmek için yerel olarak çalışan IBM Granite (granite-embedding-small-english-r2) modelini kullanır ve bu verileri Chroma vektör veri tabanında saklar.
 
 Ana amaç, chatbot'un kullanıcı sorularına doğrudan yüklenen dökümanlara sadık kalarak, doğru ve halüsinasyon görmeden (uydurmadan) cevap vermesini sağlamaktır.
 
-🏗️ Mimari İş Akışı
-Veri Hazırlığı (Ingestion): Belgelerin yüklenmesi ve anlamlı metin parçalarına (chunks) bölünmesi.
+### **🏗️ Mimari İş Akışı**
+1. **Veri Hazırlığı (Ingestion):** Belgelerin yüklenmesi ve anlamlı metin parçalarına (chunks) bölünmesi.
+2. **Embedding Üretimi:** Metin parçalarının Hugging Face üzerinden yerel ibm-granite modeliyle vektörlere dönüştürülmesi.
+3. **Vektör Veri Tabanı:** Vektörlerin arama yapılabilmesi için Chroma DB üzerinde indekslenmesi ve saklanması.
+4. **Geri Alma ve Üretim (RAG):** Kullanıcı sorusuna en uygun kaynak metinlerin bulunması ve yapay zekanın bu kaynaklara göre cevap üretmesi.
 
-Embedding Üretimi: Metin parçalarının Hugging Face üzerinden yerel ibm-granite modeliyle vektörlere dönüştürülmesi.
 
-Vektör Veri Tabanı: Vektörlerin arama yapılabilmesi için Chroma DB üzerinde indekslenmesi ve saklanması.
+### **🛠️ Kullanılan Teknolojiler**
+• **Çerçeve (Framework):** LangChain (langchain-huggingface, langchain-chroma)
+• **Embedding Modeli:** ibm-granite/granite-embedding-small-english-r2
+• **Vektör Veri Tabanı:** Chroma DB
+• **Geliştirme Ortamı:** Google Colab / Python
 
-Geri Alma ve Üretim (RAG): Kullanıcı sorusuna en uygun kaynak metinlerin bulunması ve yapay zekanın bu kaynaklara göre cevap üretmesi.
-
-🛠️ Kullanılan Teknolojiler
-Çerçeve (Framework): LangChain (langchain-huggingface, langchain-chroma)
-
-Embedding Modeli: ibm-granite/granite-embedding-small-english-r2
-
-Vektör Veri Tabanı: Chroma DB
-
-Geliştirme Ortamı: Google Colab / Python
-
-🚀 Hızlı Başlangıç
+### **🚀 Hızlı Başlangıç**
 Bu projeyi kendi ortamınızda veya Google Colab üzerinde çalıştırmak için önce gerekli kütüphaneleri yükleyin:
 
 Bash

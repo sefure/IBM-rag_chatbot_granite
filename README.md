@@ -24,7 +24,7 @@ Bash
 pip install langchain-huggingface transformers sentence-transformers langchain-chroma
 
 
-Türkçe
+## **Türkçe**
 
 ### **📝 Proje Özeti**
 
